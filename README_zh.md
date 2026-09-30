@@ -14,6 +14,7 @@
 |---|---|
 | [`/pptx`](pptx/SKILL.md) | 对样本 .pptx 做机械解剖 —— XML 实测 + 像素聚类，零 LLM 猜测 —— 产出龙骨包六件套：`skeleton.json`、`extracted_scheme.json`、`build_deck.py`、`examples`、`README`、素材槽位规格。 |
 | [`/ppt-direct`](ppt-direct/SKILL.md) | 双分支流水线：从截图/.pptx 复刻模板风格，或从零直出设计；由模型做设计决策并手写 python-pptx 矢量渲染，分钟级出稿。 |
+| [`/ppt-extract`](ppt-scheme-extractor/SKILL.md) | 纯截图场景（无 .pptx 源文件）的视觉逆向解析：模型直接读模板截图，产出 schema v2.1 设计基因 JSON —— 7 色角色场景绑定、图层分层、四类字体规范、区间化版式规则、装饰配额、素材黑白名单、页面序列过滤 —— 附 11 节解析报告与四层复刻验收清单。零脚本、零联网。 |
 
 ## 快速开始
 
@@ -29,7 +30,7 @@ cd ppt-skills
 curl -fsSL https://raw.githubusercontent.com/xu-jin-cs/ppt-skills/main/install.sh | bash
 ```
 
-安装器会把两个技能软链进 `~/.claude/skills/`。同名技能已存在时提示跳过，绝不覆盖。
+安装器会把三个技能软链进 `~/.claude/skills/`。同名技能已存在时提示跳过，绝不覆盖。
 
 ### 依赖
 
@@ -64,8 +65,8 @@ pip install python-pptx numpy Pillow PyMuPDF
 | Agent | 技能目录 |
 |---|---|
 | Claude Code | `~/.claude/skills`（默认安装位置） |
-| Codex | `~/.codex/skills`（手动把两个技能目录软链过去） |
-| Kimi Code | `~/.agents/skills`（手动把两个技能目录软链过去） |
+| Codex | `~/.codex/skills`（手动把三个技能目录软链过去） |
+| Kimi Code | `~/.agents/skills`（手动把三个技能目录软链过去） |
 
 ## 示例
 

@@ -1,6 +1,6 @@
 # ppt-skills
 
-Two agent skills for presentation automation — reverse-engineer any .pptx into a reusable skeleton pack, then generate new decks from plain text in minutes.
+Three agent skills for presentation automation — reverse-engineer any .pptx (or its screenshots) into a reusable design schema or skeleton pack, then generate new decks from plain text in minutes.
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)
@@ -14,6 +14,7 @@ Two agent skills for presentation automation — reverse-engineer any .pptx into
 |---|---|
 | [`/pptx`](pptx/SKILL.md) | Mechanically dissects a sample .pptx — XML measurement + pixel clustering, zero LLM guessing — into a six-piece skeleton pack: `skeleton.json`, `extracted_scheme.json`, `build_deck.py`, `examples`, `README`, asset slot specs. |
 | [`/ppt-direct`](ppt-direct/SKILL.md) | Dual-branch pipeline: replicate a template's style from screenshots/.pptx, or design from scratch. The model makes design decisions and hand-writes python-pptx vector rendering. Minutes per deck. |
+| [`/ppt-extract`](ppt-scheme-extractor/SKILL.md) | Vision-based design reverse-engineering for the screenshots-only case (no .pptx source): the model reads template screenshots and emits a schema v2.1 design-DNA JSON — 7 color roles bound to usage scenes, layer stack, four-role font spec, interval-based layout rules, decoration quotas, asset white/blacklists, page-sequence filtering — plus an 11-section analysis report with a replication acceptance checklist. Zero scripts, zero network. |
 
 ## Quickstart
 

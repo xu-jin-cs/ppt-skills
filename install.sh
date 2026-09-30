@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# ppt-skills installer — symlinks pptx & ppt-direct into ~/.claude/skills/
+# ppt-skills installer — symlinks pptx, ppt-direct & ppt-scheme-extractor into ~/.claude/skills/
 # Two modes:
 #   1. Run inside a cloned repo:  ./install.sh
 #   2. Piped via curl:            curl -fsSL https://raw.githubusercontent.com/xu-jin-cs/ppt-skills/main/install.sh | bash
 set -euo pipefail
 
 REPO_TARBALL="https://codeload.github.com/xu-jin-cs/ppt-skills/tar.gz/refs/heads/main"
-SKILLS=(pptx ppt-direct)
+SKILLS=(pptx ppt-direct ppt-scheme-extractor)
 
 # --- locate repo root -------------------------------------------------------
 if [ -n "${BASH_SOURCE[0]:-}" ] && [ -f "${BASH_SOURCE[0]}" ]; then
@@ -48,11 +48,11 @@ fi
 
 cat <<'EOF'
 
-Done. The skills are now available in Claude Code as /pptx and /ppt-direct.
+Done. The skills are now available in Claude Code as /pptx, /ppt-direct and /ppt-extract.
 
 Using another agent? Symlink the two skill dirs into its skills directory:
-  Codex:      ln -s <repo>/pptx <repo>/ppt-direct  into  ~/.codex/skills/
-  Kimi Code:  ln -s <repo>/pptx <repo>/ppt-direct  into  ~/.agents/skills/
+  Codex:      ln -s <repo>/{pptx,ppt-direct,ppt-scheme-extractor}  into  ~/.codex/skills/
+  Kimi Code:  ln -s <repo>/{pptx,ppt-direct,ppt-scheme-extractor}  into  ~/.agents/skills/
 
 Dependencies: pip install python-pptx numpy Pillow PyMuPDF
               + LibreOffice (soffice) for template replication / render QC.
