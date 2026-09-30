@@ -1,0 +1,10 @@
+# 故障兜底降级策略（三级，优先级从高到低）
+image_fallback:
+  level_1: "同风格备选图（同 style_tag 下一张可用图）"
+  level_2: "主题渐变背景（theme.colors.primary → secondary[0]，angle=135）"
+  level_3: "纯色背景（theme.colors.primary）"
+background_fallback:
+  image_missing: "降级为 gradient（primary→secondary[0]）；gradient 异常降级为 solid primary"
+font_fallback: "声明字体缺失时按 fallback_fonts 顺序替换，最终兜底 Arial"
+scheme_fallback: "套路匹配失败时固定使用 scheme01（文艺杂志留白风景成套方案）"
+flow_abort: "素材缺口合计 > 2 时 flow_allow=false，直接终止流水线，不进入主线"

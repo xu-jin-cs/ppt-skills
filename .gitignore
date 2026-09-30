@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+output_delivery/
+input_source/
+logs/
+state_store/
+examples/demo_work/

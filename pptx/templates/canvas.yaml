@@ -1,0 +1,15 @@
+# 画布与安全区基准（与 render_ppt.py 常量一一对应，冲突以 render_ppt.py 源码为准）
+slide_width_inch: 13.333
+slide_height_inch: 7.5
+safe_margin_inch: 0.8
+min_element_size_inch: 0.5
+max_decorations_per_page: 3
+bg_image_overlay_color: "#000000"
+bg_image_overlay_alpha: 0.35
+asset_base_path: "/path/to/ppt_assets"
+valid_page_types: [cover, toc, chapter, content, summary]
+valid_bg_types: [solid, gradient, image]
+valid_element_types: [text, image, shape, line]
+valid_alignments: [left, center, right]
+valid_fit_modes_agent: [cover, contain]   # 渲染层另支持 stretch，Agent 规范层禁用
+forbidden_bg_substring: "ppt_previews"
